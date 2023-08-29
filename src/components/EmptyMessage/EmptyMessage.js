@@ -1,3 +1,6 @@
+import {EmptyMessageTitle} from './EmptyMessage.styled'
+
+
 export const EmptyMessage = ({ message }) => {
-    return (<h2>{ message}</h2>);
+    return (<EmptyMessageTitle>{ message}</EmptyMessageTitle>);
 };

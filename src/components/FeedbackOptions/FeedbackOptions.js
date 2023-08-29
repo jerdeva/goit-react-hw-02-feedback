@@ -1,3 +1,8 @@
+import { OptionsBtn } from './FeedbackOption.styled';
+
+import { WrapperOptionsBtn } from './FeedbackOption.styled';
+
+
 export const FeedbackOptions = ({ title, options, onLeaveFeedback }) => {
   const nameOfBtns = {
     good: 'Good',
@@ -7,18 +12,17 @@ export const FeedbackOptions = ({ title, options, onLeaveFeedback }) => {
 
   return (
     <div>
-      <h2>{title}</h2>
-      <div>
-        {options.map((option, idx) => (
-          <button
-            key={idx}
+      <WrapperOptionsBtn>
+        {options.map((option, id) => (
+          <OptionsBtn
+            key={id}
             type="button"
             onClick={() => onLeaveFeedback(option)}
           >
             {nameOfBtns[option]}
-          </button>
+          </OptionsBtn>
         ))}
-      </div>
+      </WrapperOptionsBtn>
     </div>
   );
 };

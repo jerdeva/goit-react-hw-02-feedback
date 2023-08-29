@@ -2,7 +2,8 @@ import { Component } from "react";
 import { Section } from './Section/Section';
 import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions';
 import { Statistics } from './Statistics/Statistics';
-import {EmptyMessage} from './EmptyMessage/EmptyMessage'
+import { EmptyMessage } from './EmptyMessage/EmptyMessage'
+import {Wrapper} from './Wrapper.styled'
 
 
 export class App extends Component {
@@ -37,10 +38,9 @@ export class App extends Component {
     const { good, neutral, bad } = this.state
     const totalFeedbackClick = good + neutral + bad > 0;
     return (
- <div>
+ <Wrapper>
         <Section title='Please leave feedback'/>
         <FeedbackOptions options={["good", "neutral", "bad"]} onLeaveFeedback={this.handlerClick} />
-        
         
         <Section title='Statistics'/>
           {totalFeedbackClick ? (
@@ -49,8 +49,7 @@ export class App extends Component {
           : <EmptyMessage message='There is no feedback'/>
 
         }
-
-      </div>
+      </Wrapper>
     );
   }
 };
